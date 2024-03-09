@@ -4,7 +4,7 @@ import ImageGallery from '../ImageGallery/ImageGallery';
 import SearchBar from '../SearchBar/SearchBar';
 import MyLoader from '../MyLoader/MyLoader';
 import ErrorMessage  from '../ErrorMessage/ErrorMessage';
-import ImageModal from '../imageModal';
+import ImageModal from '../ImageModal';
 import { fetchPhotos } from '../../photos-api';
 import './App.css';
 
