@@ -4,8 +4,9 @@ import ImageGallery from '../ImageGallery/ImageGallery';
 import SearchBar from '../SearchBar/SearchBar';
 import MyLoader from '../MyLoader/MyLoader';
 import ErrorMessage  from '../ErrorMessage/ErrorMessage';
-import ImageModal from '../ImageModal';
+import ImageModal from '../ImageModal/ImageModal';
 import { fetchPhotos } from '../../photos-api';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import './App.css';
 
 export default function App() {
@@ -77,7 +78,7 @@ export default function App() {
     <SearchBar onSearch={handleSearch}/>
     {error && <ErrorMessage/>}
     {photos.length > 0 && <ImageGallery items={photos} onImageClick={handleImgClick} />}
-    {photos.length > 0 && !loading && totalPages && totalPages !== page && <button className='loadmore' type='button' onClick={handleLoadMore}>Load more</button>}
+    {photos.length > 0 && !loading && totalPages && totalPages !== page && <LoadMoreBtn onClick={handleLoadMore}/>}
     {loading && <MyLoader/>}
     <ImageModal onRequestClose = {closeModal} isOpen={modalIsOpen} imageUrl={selectedImg}/>
     
